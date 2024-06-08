@@ -26,6 +26,10 @@ header {
   align-items: center;
   padding: 10px 20px;
 }
+header a {
+  color: var(--light-text);
+  text-decoration: none;
+}
 
 .logo {
   display: flex;
