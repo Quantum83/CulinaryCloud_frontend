@@ -1,0 +1,66 @@
+:root {
+  --light-beige: #f7dcb9;
+  --dark-green: #b5c18e;
+  --light-brown: #deac80;
+  --dark-brown: #b99470;
+  --red: #ef5350;
+  --light-text: #fff;
+  --dark-text: #333;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ff6f61;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.profile button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+}
+
+.sort-menu {
+  margin-bottom: 20px;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.bento-grid div {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+}
