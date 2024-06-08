@@ -9,7 +9,6 @@ function goToProfile() {
 
 function sortRecipes() {
   const sortBy = document.getElementById("sort-recipes").value;
-  alert("Sorting recipes by: " + sortBy);
   // Implement sorting logic here
 }
 
