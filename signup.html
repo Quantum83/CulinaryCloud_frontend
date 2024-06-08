@@ -4,42 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - Culinary Cloud</title>
-    <link rel="stylesheet" href="signup-style.css" />
+    <link rel="stylesheet" href="home-style.css" />
   </head>
   <body>
     <header>
       <div class="logo">
-        <img src="logo-placeholder.png" alt="Culinary Cloud Logo" />
-        <span>Culinary Cloud</span>
+        <a
+          class="homepage-link"
+          href="http://culinary-cloud-website-bucket.s3-website-us-east-1.amazonaws.com/"
+        >
+          <img src="logo-placeholder.png" alt="Culinary Cloud Logo" />
+          <span>Culinary Cloud</span>
+        </a>
       </div>
     </header>
-
     <main>
-      <h1>Sign Up</h1>
+      <h2>Sign Up</h2>
       <form id="signup-form">
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required />
-        </div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
         <button type="submit">Sign Up</button>
       </form>
+      <div id="error-message"></div>
+      <div id="google-signin-button"></div>
     </main>
-
     <footer>
       <div class="contact">
         <h3>Contact the creator:</h3>
         <p>Email: baszaksocial@gmail.com</p>
       </div>
     </footer>
-
-    <script src="signup-script.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="signup.js"></script>
   </body>
 </html>

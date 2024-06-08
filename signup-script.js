@@ -1,36 +1,53 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("signup-form");
-  form.addEventListener("submit", async (event) => {
+document
+  .getElementById("signup-form")
+  .addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(form);
-    const data = {
-      username: formData.get("username"),
-      email: formData.get("email"),
-      password: formData.get("password"),
-    };
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
     try {
       const response = await fetch(
-        "https://w3wuvm9w3a.execute-api.us-east-1.amazonaws.com/dev",
+        "https://w3wuvm9w3a.execute-api.us-east-1.amazonaws.com/dev/signup",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, email, password }),
         }
       );
 
-      if (response.ok) {
-        alert("Sign up successful!");
-        window.location.href = "index.html"; // Redirect to homepage after successful sign-up
+      const result = await response.json();
+      if (response.status === 201) {
+        alert("User created successfully");
+        window.location.href = "signup.html";
       } else {
-        const errorData = await response.json();
-        alert("Sign up failed: " + errorData.message);
+        document.getElementById("error-message").innerText = result.message;
       }
     } catch (error) {
-      alert("Sign up failed: " + error.message);
+      document.getElementById("error-message").innerText = "An error occurred";
     }
   });
+
+// Google Sign-In
+function onSignIn(googleUser) {
+  const id_token = googleUser.getAuthResponse().id_token;
+  fetch("https://your-api-endpoint/google-signin", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token: id_token }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === "success") {
+        window.location.href = "profile.html";
+      } else {
+        document.getElementById("error-message").innerText =
+          "Google sign-in failed";
+      }
+    });
+}
+
+gapi.load("auth2", function () {
+  gapi.auth2.init();
 });
