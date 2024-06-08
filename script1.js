@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function goToProfile() {
-  alert("Profile page not implemented yet.");
+  window.location.href = "signup.html";
 }
 
 function sortRecipes() {
