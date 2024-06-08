@@ -12,6 +12,10 @@ function sortRecipes() {
   // Implement sorting logic here
 }
 
+function submitRecipe() {
+  alert("Submit Recipe functionality not implemented yet.");
+}
+
 async function loadRecipes() {
   const recipeGrid = document.getElementById("recipe-grid");
   // Fetch recipes from your API

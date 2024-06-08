@@ -56,13 +56,25 @@ main {
   padding: 20px;
 }
 
-.sort-menu {
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 
 .sort-menu label,
-.sort-menu select {
+.sort-menu select,
+.submit-recipe button {
   font-size: 16px;
+}
+
+.submit-recipe button {
+  background-color: var(--red);
+  color: var(--light-text);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 .bento-grid {

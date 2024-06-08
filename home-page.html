@@ -18,13 +18,18 @@
     </header>
 
     <main>
-      <div class="sort-menu">
-        <label for="sort-recipes">Sort by:</label>
-        <select id="sort-recipes" onchange="sortRecipes()">
-          <option value="most-popular">Most Popular</option>
-          <option value="most-recent">Most Recent</option>
-          <option value="most-saved">Most Saved</option>
-        </select>
+      <div class="menu-container">
+        <div class="sort-menu">
+          <label for="sort-recipes">Sort by:</label>
+          <select id="sort-recipes" onchange="sortRecipes()">
+            <option value="most-popular">Most Popular</option>
+            <option value="most-recent">Most Recent</option>
+            <option value="most-saved">Most Saved</option>
+          </select>
+        </div>
+        <div class="submit-recipe">
+          <button onclick="submitRecipe()">Submit Recipe</button>
+        </div>
       </div>
       <div class="bento-grid" id="recipe-grid">
         <!-- Recipe cards will be inserted here by JS -->
