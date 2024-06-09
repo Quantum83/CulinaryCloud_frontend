@@ -3,8 +3,29 @@ document.addEventListener("DOMContentLoaded", () => {
   loadRecipes();
 });
 
+const poolData = {
+  UserPoolId: "YOUR_USER_POOL_ID", // e.g. us-east-1_XXXXXX
+  ClientId: "YOUR_APP_CLIENT_ID", // e.g. 1h57kf5cpq17m0eml12EXAMPLE
+};
+const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+
 function goToProfile() {
-  window.location.href = "signup.html";
+  const cognitoUser = userPool.getCurrentUser();
+
+  if (cognitoUser) {
+    cognitoUser.getSession((err, session) => {
+      if (err || !session.isValid()) {
+        // If there is an error or the session is not valid, redirect to sign-in page
+        window.location.href = "sign-in-sign-up.html";
+      } else {
+        // If the session is valid, redirect to profile page
+        window.location.href = "profile.html";
+      }
+    });
+  } else {
+    // If there is no user, redirect to sign-in page
+    window.location.href = "sign-in-sign-up.html";
+  }
 }
 
 function sortRecipes() {

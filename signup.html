@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up - Culinary Cloud</title>
+    <title>Sign In - Culinary Cloud</title>
     <link rel="stylesheet" href="home-style.css" />
   </head>
   <body>
@@ -19,21 +19,12 @@
       </div>
     </header>
     <main>
-      <h2>Sign Up</h2>
-      <form id="signup-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-
-        <button type="submit">Sign Up</button>
-      </form>
-      <div id="error-message"></div>
-      <div id="google-signin-button"></div>
+      <iframe
+        src="https://culinary-cloud.auth.us-east-1.amazoncognito.com/login?response_type=token&client_id=3fj031gafrt8bae5k4cflh1281&redirect_uri=http://localhost:3000/callback"
+        width="100%"
+        height="600px"
+        frameborder="0"
+      ></iframe>
     </main>
     <footer>
       <div class="contact">

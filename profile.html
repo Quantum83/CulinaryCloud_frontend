@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a
+          class="homepage-link"
+          href="http://culinary-cloud-website-bucket.s3-website-us-east-1.amazonaws.com/"
+        >
+          <img src="logo-placeholder.png" alt="Culinary Cloud Logo" />
+          <span>Culinary Cloud</span>
+        </a>
+      </div>
+    </header>
+    <main>
+      <h1>Welcome to your Profile</h1>
+      <button onclick="signOut()">Sign Out</button>
+
+      <script>
+        const poolData = {
+          UserPoolId: "YOUR_USER_POOL_ID", // e.g. us-east-1_XXXXXX
+          ClientId: "YOUR_APP_CLIENT_ID", // e.g. 1h57kf5cpq17m0eml12EXAMPLE
+        };
+        const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+
+        function signOut() {
+          const cognitoUser = userPool.getCurrentUser();
+          if (cognitoUser) {
+            cognitoUser.signOut();
+            alert("Signed out successfully!");
+            window.location.href = "index.html"; // Redirect to home page
+          }
+        }
+      </script>
+    </main>
+    <footer>
+      <div class="contact">
+        <h3>Contact the creator:</h3>
+        <p>Email: baszaksocial@gmail.com</p>
+      </div>
+    </footer>
+  </body>
+</html>
