@@ -7,25 +7,35 @@ const poolData = {
   UserPoolId: "us-east-1_WFdS4C3O4",
   ClientId: "3fj031gafrt8bae5k4cflh1281",
 };
-const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
 function goToProfile() {
-  const cognitoUser = userPool.getCurrentUser();
+  var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+  var cognitoUser = userPool.getCurrentUser();
 
-  if (cognitoUser) {
-    cognitoUser.getSession((err, session) => {
-      if (err || !session.isValid()) {
-        // If there is an error or the session is not valid, redirect to sign-in page
-        window.location.href = "signup.html";
+  if (cognitoUser != null) {
+    cognitoUser.getSession(function (err, session) {
+      if (err) {
+        console.error(err);
+        redirectToCognitoSignIn();
       } else {
-        // If the session is valid, redirect to profile page
         window.location.href = "profile.html";
       }
     });
   } else {
-    // If there is no user, redirect to sign-in page
-    window.location.href = "signup.html";
+    redirectToCognitoSignIn();
   }
+}
+
+function redirectToCognitoSignIn() {
+  const clientId = "3fj031gafrt8bae5k4cflh1281";
+  const domain = "culinary-cloud.auth.us-east-1.amazoncognito.com";
+  const redirectUri = "http://localhost:3000/callback";
+  const responseType = "code";
+
+  const cognitoUrl = `https://${domain}/login?response_type=${responseType}&client_id=${clientId}&redirect_uri=${encodeURIComponent(
+    redirectUri
+  )}`;
+  window.location.href = cognitoUrl;
 }
 
 function sortRecipes() {
