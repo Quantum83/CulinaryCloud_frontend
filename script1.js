@@ -32,11 +32,11 @@ function redirectToCognitoSignIn() {
   const redirectUri = "https://culinary-cloud.click/profile.html";
   const responseType = "code";
 
-  const cognitoUrl = `https://${domain}/login?client_id=${clientId}&response_type=${responseType}&scope=email+openid+phone&redirect_uri=${encodeURIComponent(
+  const WhereToGoUrl = `https://${domain}/login?client_id=${clientId}&response_type=${responseType}&scope=email+openid+phone&redirect_uri=${encodeURIComponent(
     redirectUri
   )}`;
-  console.log(cognitoUrl);
-  window.location.href = cognitoUrl;
+  console.log(WhereToGoUrl);
+  window.location.href = WhereToGoUrl;
 }
 
 function sortRecipes() {
