@@ -18,7 +18,7 @@ function goToProfile() {
         console.error(err);
         redirectToCognitoSignIn();
       } else {
-        window.location.href = "profile.html";
+        window.location.href = "https://culinary-cloud.click/profile.html";
       }
     });
   } else {
