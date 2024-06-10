@@ -4,8 +4,20 @@
   --light-brown: #deac80;
   --dark-brown: #b99470;
   --red: #ef5350;
+  --red-saturated: #e73f3c;
   --light-text: #fff;
   --dark-text: #333;
+}
+
+.playfair {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.alice {
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -49,10 +61,20 @@ header a {
 }
 
 .profile button {
-  background-color: var(--red);
-  color: var(--light-text);
-  border: none;
+  padding: 5px 15px;
+  border-radius: 7.5px;
+  background-color: var(--light-beige);
+  color: var(--dark-text);
+  font-weight: 700;
+  border: 2px solid var(--dark-text);
   cursor: pointer;
+  filter: drop-shadow(3px 3px 3px black);
+  transition: 0.5s;
+}
+.profile button:hover {
+  background-color: var(--light-brown);
+  color: var(--dark-text);
+  transform: scale(1.1);
 }
 
 main {
@@ -70,15 +92,31 @@ main {
 .sort-menu label,
 .sort-menu select,
 .submit-recipe button {
-  font-size: 16px;
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#sort-recipes {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 7.5px;
 }
 
 .submit-recipe button {
   background-color: var(--red);
   color: var(--light-text);
   border: none;
+  border-radius: 7.5px;
+  filter: drop-shadow(3px 3px 3px black);
   padding: 5px 10px;
   cursor: pointer;
+  transition: 0.5s;
+}
+.submit-recipe button:hover {
+  background-color: var(--red-saturated);
+  color: var();
+  transform: scale(1.1);
 }
 
 .bento-grid {
@@ -100,6 +138,10 @@ footer {
   text-align: center;
   padding: 10px 20px;
   margin-top: auto;
+}
+
+footer a {
+  color: var(--light-text);
 }
 
 footer h3,

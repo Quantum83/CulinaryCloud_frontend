@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const poolData = {
-  UserPoolId: "us-east-1_WFdS4C3O4",
-  ClientId: "3fj031gafrt8bae5k4cflh1281",
+  UserPoolId: "us-east-1_0r3Udl8ng",
+  ClientId: "14k3k2bu3a03pk4clfg94q02r3",
 };
 
 function goToProfile() {
@@ -27,9 +27,9 @@ function goToProfile() {
 }
 
 function redirectToCognitoSignIn() {
-  const clientId = "3fj031gafrt8bae5k4cflh1281";
-  const domain = "culinary-cloud.auth.us-east-1.amazoncognito.com";
-  const redirectUri = "http://localhost:3000/callback";
+  const clientId = "14k3k2bu3a03pk4clfg94q02r3";
+  const domain = "culinarycloud.auth.us-east-1.amazoncognito.com";
+  const redirectUri = "https://culinary-cloud.click/profile.html";
   const responseType = "code";
 
   const WhereToGoUrl = `https://${domain}/login?client_id=${clientId}&response_type=${responseType}&scope=email+openid+phone&redirect_uri=${encodeURIComponent(
