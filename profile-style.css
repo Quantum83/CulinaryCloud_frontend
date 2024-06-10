@@ -1,0 +1,108 @@
+:root {
+  --light-beige: #f7dcb9;
+  --dark-green: #b5c18e;
+  --light-brown: #deac80;
+  --dark-brown: #b99470;
+  --red: #ef5350;
+  --light-text: #fff;
+  --dark-text: #333;
+}
+
+body {
+  background-color: var(--light-beige);
+  color: var(--dark-text);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--red);
+  color: var(--light-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+header a {
+  color: var(--light-text);
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.profile button {
+  background-color: var(--red);
+  color: var(--light-text);
+  border: none;
+  cursor: pointer;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sort-menu label,
+.sort-menu select,
+.submit-recipe button {
+  font-size: 16px;
+}
+
+.submit-recipe button {
+  background-color: var(--red);
+  color: var(--light-text);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.bento-grid div {
+  background-color: var(--light-brown);
+  padding: 10px;
+  border: 1px solid var(--dark-brown);
+  border-radius: 5px;
+}
+
+footer {
+  background-color: var(--dark-brown);
+  color: var(--light-text);
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: auto;
+}
+
+footer h3,
+footer p {
+  margin: 5px 0;
+}
