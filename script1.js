@@ -32,9 +32,11 @@ function redirectToCognitoSignIn() {
   const redirectUri = "https://culinary-cloud.click/profile.html";
   const responseType = "code";
 
-  const cognitoUrl = `https://${domain}/login?client_id=${clientId}&response_type=${responseType}&scope=email+openid+phone&redirect_uri=${encodeURIComponent(
-    redirectUri
-  )}`;
+  // const cognitoUrl = `https://${domain}/login?client_id=${clientId}&response_type=${responseType}&scope=email+openid+phone&redirect_uri=${encodeURIComponent(
+  //   redirectUri
+  // )}`;
+  const cognitoUrl =
+    "https://culinary-cloud.auth.us-east-1.amazoncognito.com/login?client_id=3fj031gafrt8bae5k4cflh1281&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fculinary-cloud.click%2Fprofile.html";
   window.location.href = cognitoUrl;
 }
 
