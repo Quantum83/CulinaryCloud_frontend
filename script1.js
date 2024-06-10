@@ -28,7 +28,7 @@ function goToProfile() {
 
 function redirectToCognitoSignIn() {
   const clientId = "3fj031gafrt8bae5k4cflh1281";
-  const domain = "culinary-cloud.auth.us-east-1.amazoncognito.com";
+  const domain = "https://culinary-cloud.auth.us-east-1.amazoncognito.com";
   const redirectUri = "https://culinary-cloud.click/profile.html";
   const responseType = "code";
 
