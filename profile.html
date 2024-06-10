@@ -11,24 +11,31 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alice&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Include AWS SDK and Cognito Identity SDK -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.977.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@5.2.3/dist/amazon-cognito-identity.min.js"></script>
   </head>
   <body>
     <header>
       <div class="logo">
         <a class="homepage-link" href="https://culinary-cloud.click/">
           <img src="logo-placeholder.png" alt="Culinary Cloud Logo" />
-          <span>Culinary Cloud</span>
+          <span class="playfair">Culinary Cloud</span>
         </a>
       </div>
     </header>
     <main>
-      <h1>Welcome to your Profile</h1>
+      <h1 class="alice">Welcome to your Profile</h1>
       <button onclick="signOut()">Sign Out</button>
 
       <script>
         const poolData = {
-          UserPoolId: "us-east-1_WFdS4C3O4",
-          ClientId: "3fj031gafrt8bae5k4cflh1281",
+          UserPoolId: "us-east-1_0r3Udl8ng",
+          ClientId: "14k3k2bu3a03pk4clfg94q02r3",
         };
         const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
@@ -43,7 +50,7 @@
       </script>
     </main>
     <footer>
-      <div class="contact">
+      <div class="contact playfair">
         <h3>Contact the creator:</h3>
         <p>Email: baszaksocial@gmail.com</p>
       </div>
