@@ -9,6 +9,9 @@
   --dark-text: #333;
 }
 
+.logo {
+  transform: scale(1.5);
+}
 .playfair {
   font-family: "Playfair Display", serif;
   font-weight: 600;

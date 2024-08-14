@@ -18,7 +18,6 @@ function submitRecipe() {
 
 async function loadRecipes() {
   const recipeGrid = document.getElementById("recipe-grid");
-  // Fetch recipes from your API
   const response = await fetch("https://your-api-endpoint/recipes");
   const recipes = await response.json();
 
