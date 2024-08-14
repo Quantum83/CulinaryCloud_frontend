@@ -4,20 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function goToProfile() {
-  var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-  var cognitoUser = userPool.getCurrentUser();
-
-  if (cognitoUser != null) {
-    cognitoUser.getSession(function (err, session) {
-      if (err) {
-        console.error(err);
-      } else {
-        window.location.href = "https://culinary-cloud.click/profile.html";
-      }
-    });
-  } else {
-    return "not yet implemented";
-  }
+  alert("not yet implemented");
 }
 
 function sortRecipes() {
