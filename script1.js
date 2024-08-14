@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function goToProfile() {
-  alert("not yet implemented");
+  alert("Functionality not implemented yet.");
 }
 
 function sortRecipes() {
