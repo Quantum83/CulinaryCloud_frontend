@@ -2,12 +2,16 @@ import { auth } from "./firebaseConfig.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Load recipes on page load
+  const P_Button = document.getElementById("profile-button");
+  button.addEventListener("click", () => {
+    checkUserAuth();
+  });
+  const S_Button = document.getElementById("submit-button");
+  button.addEventListener("click", () => {
+    submitRecipe();
+  });
   loadRecipes();
 });
-
-function goToProfile() {
-  checkUserAuth();
-}
 
 function checkUserAuth() {
   auth.onAuthStateChanged((user) => {
