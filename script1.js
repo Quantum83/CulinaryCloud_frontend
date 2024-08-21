@@ -1,10 +1,24 @@
+import { auth } from "./firebaseConfig.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   // Load recipes on page load
   loadRecipes();
 });
 
 function goToProfile() {
-  alert("Functionality not implemented yet.");
+  checkUserAuth();
+}
+
+function checkUserAuth() {
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      // User is signed in, redirect to profile
+      window.location.href = "profile.html";
+    } else {
+      // No user is signed in, redirect to sign-in page
+      window.location.href = "sign-in.html";
+    }
+  });
 }
 
 function sortRecipes() {
