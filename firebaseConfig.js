@@ -1,8 +1,4 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
-
+// firebaseConfig.js
 const firebaseConfig = {
   apiKey: "AIzaSyBMvku660M8XtYXwfNwlXxchgYSi_IwH0Q",
   authDomain: "culinary-cloud-data.firebaseapp.com",
@@ -14,9 +10,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-const analytics = getAnalytics(app);
-
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const auth = firebase.auth();
 export { db, auth };
