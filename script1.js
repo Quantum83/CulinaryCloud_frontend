@@ -1,5 +1,3 @@
-import { auth } from "./firebaseConfig.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   // Load recipes on page load
   const P_Button = document.getElementById("profile-button");
