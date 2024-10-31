@@ -39,25 +39,33 @@ header {
   align-items: center;
   padding: 10px 20px;
 }
-header a {
-  color: var(--light-text);
+
+.homepage-link {
+  color: var(--light-beige);
+  text-shadow: 0px 4px 8px black;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--light-beige); */
   text-decoration: none;
+  cursor: pointer;
 }
 
-.logo {
-  display: flex;
+.logo_title {
+  display: inline-flex;
   align-items: center;
 }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+.title {
+  font-family: "Alice", serif;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0px;
 }
 
-.logo span {
-  font-size: 24px;
-  font-weight: bold;
+.logo {
+  width: 5vh;
+  height: 5vh;
+  margin-left: 1vw;
+  margin-right: 2vw;
 }
 
 .profile button {
