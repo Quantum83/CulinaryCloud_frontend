@@ -21,6 +21,26 @@
 }
 
 .title {
+  display: flex;
+  justify-content: center;
+}
+
+.tab {
+  cursor: pointer;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid black;
+  border-bottom: none;
+}
+
+.tab.active {
+  background-color: var(--light-brown);
+  color: var(--dark-text);
+  font-weight: bold;
+}
+
+.title {
   text-align: center;
   font-size: 45px;
   width: 50vw;
@@ -34,6 +54,33 @@
   filter: drop-shadow(3px 3px 3px black);
   z-index: 1;
   scale: 1.05;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+.background-cloud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-image: url("path/to/your-cloud.svg");
+  background-size: contain;
+  background-repeat: repeat;
+  z-index: -1;
+  animation: pan-clouds 60s linear infinite;
+}
+
+@keyframes pan-clouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 body {

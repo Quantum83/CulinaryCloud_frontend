@@ -29,36 +29,88 @@ add forgot password button?
     <!-- <script src="" async defer></script> -->
   </head>
   <body>
-    <h1 class="title alice">Sign Up</h1>
+    <div class="background-cloud"></div>
+    <h1 class="title alice">
+      <span id="signup-tab" class="tab active">Sign Up</span>
+      <span id="login-tab" class="tab">Log In</span>
+    </h1>
+
     <div class="sign-in-container">
       <form id="sign-in-form" action="">
-        <label for="email" class="playfair">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter a valid email address..."
-          required
-        />
-        <label for="user" class="playfair">Username:</label>
-        <input
-          type="text"
-          id="user"
-          name="user"
-          placeholder="Enter your username..."
-          required
-        />
-        <label for="password" class="playfair">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Enter your password..."
-          required
-        />
-        <button type="submit" class="alice">Submit</button>
-        <a href="login.html" class="login">Already a user? Log in instead.</a>
+        <div id="signup-fields">
+          <label for="email" class="playfair">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter a valid email address..."
+            required
+          />
+
+          <label for="user" class="playfair">Username:</label>
+          <input
+            type="text"
+            id="user"
+            name="user"
+            placeholder="Enter your username..."
+            required
+          />
+
+          <label for="password" class="playfair">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password..."
+            required
+          />
+        </div>
+
+        <div id="login-fields" style="display: none">
+          <label for="login-identifier" class="playfair"
+            >Email or Username:</label
+          >
+          <input
+            type="text"
+            id="login-identifier"
+            name="login-identifier"
+            placeholder="Enter your email or username..."
+            required
+          />
+
+          <label for="login-password" class="playfair">Password:</label>
+          <input
+            type="password"
+            id="login-password"
+            name="login-password"
+            placeholder="Enter your password..."
+            required
+          />
+        </div>
+
+        <button type="submit" class="alice" id="submit-button">Submit</button>
       </form>
     </div>
+    <script>
+      document
+        .getElementById("signup-tab")
+        .addEventListener("click", function () {
+          document.getElementById("signup-fields").style.display = "block";
+          document.getElementById("login-fields").style.display = "none";
+          document.getElementById("submit-button").textContent = "Sign Up";
+          document.getElementById("signup-tab").classList.add("active");
+          document.getElementById("login-tab").classList.remove("active");
+        });
+
+      document
+        .getElementById("login-tab")
+        .addEventListener("click", function () {
+          document.getElementById("signup-fields").style.display = "none";
+          document.getElementById("login-fields").style.display = "block";
+          document.getElementById("submit-button").textContent = "Log In";
+          document.getElementById("login-tab").classList.add("active");
+          document.getElementById("signup-tab").classList.remove("active");
+        });
+    </script>
   </body>
 </html>
